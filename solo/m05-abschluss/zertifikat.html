@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zertifikat — SHAPES Training</title>
+  <link rel="stylesheet" href="../../shared/shapes.css" />
+  <style>
+    @media print {
+      .sidebar, .breadcrumb, .cert-print, .btn-row { display: none !important; }
+      .main { margin: 0 !important; padding: 0 !important; max-width: 100% !important; }
+    }
+  </style>
+</head>
+<body class="mod-m05">
+<div class="sidebar">
+  <div class="sidebar-header">
+    <a href="../../index.html"><img src="../../assets/logos/LogoBlack.png" alt="SHAPES" class="sidebar-logo" /></a>
+    <a href="index.html" class="sidebar-back" id="sidebar-back-link">← Modulübersicht</a>
+  </div>
+  <nav class="sidebar-nav" id="sidebar-nav"></nav>
+  <div class="sidebar-footer">
+    <div class="progress-summary" id="progress-summary"></div>
+  </div>
+</div>
+<div class="main">
+
+  <div class="cert-wrapper">
+    <div class="certificate animate-scale">
+
+      <img src="../../assets/logos/LogoBlack.png" alt="SHAPES" class="cert-logo" />
+
+      <div class="cert-seal">✓</div>
+      <div class="cert-title">Teilnahmezertifikat</div>
+      <h1 class="cert-heading">SHAPES Training</h1>
+      <p class="cert-subheading">Dieses Zertifikat bestätigt den erfolgreichen Abschluss des strukturierten Mitarbeiter-Trainings.</p>
+
+      <hr class="cert-divider" />
+
+      <div class="cert-name-label">Teilnehmer:in</div>
+      <input type="text" class="cert-name-input" placeholder="Name eingeben" id="cert-name" />
+
+      <p class="cert-confirm">hat alle Module, Lektionen und Tests erfolgreich durchgearbeitet.</p>
+
+      <div class="cert-details">
+        <span><span class="label">Umfang</span><span class="value">4 Module · 15 Lektionen · 5 Tests</span></span>
+        <span><span class="label">Ausgestellt am</span><span class="value" id="cert-date"></span></span>
+      </div>
+
+      <hr class="cert-divider" />
+
+      <div class="cert-signature">
+        <div>
+          <div class="cert-sig-line"></div>
+          <div class="cert-sig-label">Unterschrift Teilnehmer:in</div>
+        </div>
+        <div>
+          <div class="cert-sig-line"></div>
+          <div class="cert-sig-label">Unterschrift Kontrollperson</div>
+        </div>
+      </div>
+
+      <div style="margin-top:36px;font-family:var(--font-mono);font-size:8.5px;letter-spacing:0.06em;color:var(--ash);opacity:0.5;">
+        SHAPES · Aktivierendes System für die Fussmuskulatur · Patent WO 2021/180409 A1
+      </div>
+
+    </div>
+  </div>
+
+  <div class="cert-print" style="margin-top:16px;text-align:center;">
+    <button class="btn btn-primary" onclick="window.print()">🖨️ Drucken / Als PDF speichern</button>
+    <a href="../index.html" class="btn">← Zurück</a>
+  </div>
+</div>
+<script src="../../shared/shapes.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  renderSidebar();
+  var d = new Date();
+  document.getElementById('cert-date').textContent = d.toLocaleDateString('de-DE', {year:'numeric',month:'long',day:'numeric'});
+
+  // Save name to localStorage so it persists on print
+  var nameInput = document.getElementById('cert-name');
+  var saved = localStorage.getItem('shapes-cert-name');
+  if (saved) nameInput.value = saved;
+  nameInput.addEventListener('input', function() {
+    localStorage.setItem('shapes-cert-name', this.value);
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Abschluss — SHAPES Training</title>
+  <link rel="stylesheet" href="../../shared/shapes.css" />
+  <style>
+    .explain-box { margin: 24px 0; }
+    .explain-box textarea { width: 100%; max-width: 640px; min-height: 200px; padding: 16px; border: var(--rule); border-radius: 4px; font-family: var(--font-body); font-size: 14px; line-height: 1.6; resize: vertical; }
+    .explain-box textarea:focus { outline: none; border-color: var(--clay); }
+    .explain-hint { font-size: 13px; color: var(--ash); margin-top: 8px; }
+    .signature-field { margin: 32px 0; }
+    .signature-line { border-bottom: 1px solid var(--ash); width: 280px; margin: 28px 0 6px; }
+    .signature-label { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em; color: var(--ash); text-transform: uppercase; }
+    .oral-option { margin: 16px 0; padding: 16px; border: var(--rule); border-radius: 4px; background: rgba(0,0,0,0.01); max-width: 640px; }
+    .oral-option p { font-size: 14px; margin-bottom: 8px; }
+    .sig-input {
+      display: block; width: 100%; max-width: 400px;
+      padding: 8px 0; margin-top: 8px;
+      border: none; border-bottom: 1px solid var(--ash);
+      font-family: var(--font-body); font-size: 16px;
+      background: transparent; outline: none;
+    }
+    .sig-input:focus { border-bottom-color: var(--clay); border-bottom-width: 2px; }
+    @media print {
+      .sidebar, .breadcrumb, .btn-row, #btn-check, #btn-retry, #print-btn, .oral-option, #quiz-questions { display: none !important; }
+      .explain-box textarea { border: none; background: none; min-height: auto; resize: none; }
+      .sig-input { border: none; border-bottom: 1px solid #999; background: none; padding: 4px 0; font-family: inherit; font-size: inherit; }
+      .main { margin: 0; padding: 20px 30px; }
+      @page { size: A4; margin: 15mm; }
+    }
+  </style>
+</head>
+<body class="mod-m05">
+<aside class="sidebar" role="navigation">
+  <div class="sidebar-header">
+    <a href="../../index.html"><img src="../../assets/logos/LogoBlack.png" alt="SHAPES" class="sidebar-logo" /></a>
+    <a href="index.html" class="sidebar-back">← Modulübersicht</a>
+  </div>
+  <nav class="sidebar-nav" id="sidebar-nav"></nav>
+  <div class="sidebar-footer">
+    <div class="progress-summary" id="progress-summary"></div>
+  </div>
+</aside>
+<div class="main">
+  <div class="page-badge">Abschluss</div>
+  <h1>Abschluss</h1>
+  <p class="page-subtitle">10 Fragen aus allen Modulen + Selbsterklärung. Ab 80 % bestanden. Danach drucken, unterschreiben lassen und dem Zertifikat beilegen.</p>
+  <hr class="rule" />
+
+  <!-- ═══════════════ QUIZ ═══════════════ -->
+  <h2>Wissenstest</h2>
+  <div class="q-section" id="quiz-questions">
+
+  <div class="quiz-question">
+    <div class="q-num">Frage 1</div>
+    <div class="q-text">Was ist SHAPES?</div>
+    <label class="option"><input type="radio" name="q0" value="a" /> a) Ein aktivierendes System für die Fussmuskulatur</label>
+    <label class="option"><input type="radio" name="q0" value="b" /> b) Eine orthopädische Einlage</label>
+    <label class="option"><input type="radio" name="q0" value="c" /> c) Eine Massage-Einlage für den Schuh</label>
+    <div class="feedback" id="fb-0"></div>
+  </div>
+
+  <div class="quiz-question">
+    <div class="q-num">Frage 2</div>
+    <div class="q-text">Welche Preise sind korrekt?</div>
+    <label class="option"><input type="radio" name="q1" value="a" /> a) Allround 99 €, Hybrid 119 €, Golf 149 €</label>
+    <label class="option"><input type="radio" name="q1" value="b" /> b) Allround 79 €, Hybrid 99 €, Golf 119 €</label>
+    <label class="option"><input type="radio" name="q1" value="c" /> c) Alle 99 €</label>
+    <div class="feedback" id="fb-1"></div>
+  </div>
+
+  <div class="quiz-question">
+    <div class="q-num">Frage 3</div>
+    <div class="q-text">Was ist der häufigste Fehler beim Balance Check?</div>
+    <label class="option"><input type="radio" name="q2" value="a" /> a) Zu wenig Druck</label>
+    <label class="option"><input type="radio" name="q2" value="b" /> b) Zu viel Druck</label>
+    <label class="option"><input type="radio" name="q2" value="c" /> c) Falsche Schuhgrösse</label>
+    <div class="feedback" id="fb-2"></div>
+  </div>
+
+  <div class="quiz-question">
+    <div class="q-num">Frage 4</div>
+    <div class="q-text">Wie reinigt man SHAPES?</div>
+    <label class="option"><input type="radio" name="q3" value="a" /> a) Mit Alkohol und Tuch</label>
+    <label class="option"><input type="radio" name="q3" value="b" /> b) Lauwarmes Wasser und milde Seife</label>
+    <label class="option"><input type="radio" name="q3" value="c" /> c) In der Waschmaschine</label>
+    <div class="feedback" id="fb-3"></div>
+  </div>
+
+  <div class="quiz-question">
+    <div class="q-num">Frage 5</div>
+    <div class="q-text">Wann sollte der Preis im Gespräch genannt werden?</div>
+    <label class="option"><input type="radio" name="q4" value="a" /> a) Erst ganz am Ende</label>
+    <label class="option"><input type="radio" name="q4" value="b" /> b) Direkt bei der Vorstellung — kein Versteckspiel</label>
+    <label class="option"><input type="radio" name="q4" value="c" /> c) Nur auf Nachfrage</label>
+    <div class="feedback" id="fb-4"></div>
+  </div>
+
+  <div class="quiz-question">
+    <div class="q-num">Frage 6</div>
+    <div class="q-text">Welche Aussagen zum Balance Check sind korrekt? (Mehrere)</div>
+    <label class="option"><input type="checkbox" name="q5a" value="t" /> a) Hände verschränken, Handflächen nach oben</label>
+    <label class="option"><input type="checkbox" name="q5b" value="t" /> b) Schritt 1 und 2: von vorne und von hinten testen</label>
+    <label class="option"><input type="checkbox" name="q5c" value="f" /> c) Man fragt: "Spüren Sie den Unterschied?"</label>
+    <label class="option"><input type="checkbox" name="q5d" value="t" /> d) Nach dem Einlegen den Gast eine Runde gehen lassen</label>
+    <div class="feedback" id="fb-5"></div>
+  </div>
+
+  <div class="quiz-question">
+    <div class="q-num">Frage 7</div>
+    <div class="q-text">In welchen Schuhen darf SHAPES NICHT verwendet werden?</div>
+    <label class="option"><input type="radio" name="q6" value="a" /> a) High Heels</label>
+    <label class="option"><input type="radio" name="q6" value="b" /> b) Zertifizierte Arbeitssicherheitsschuhe</label>
+    <label class="option"><input type="radio" name="q6" value="c" /> c) Business-Schuhe</label>
+    <div class="feedback" id="fb-6"></div>
+  </div>
+
+  <div class="quiz-question">
+    <div class="q-num">Frage 8</div>
+    <div class="q-text">Welche Begriffe sollten in der SHAPES-Kommunikation vermieden werden? (Mehrere)</div>
+    <label class="option"><input type="checkbox" name="q7a" value="t" /> a) Einlage</label>
+    <label class="option"><input type="checkbox" name="q7b" value="t" /> b) Sohle</label>
+    <label class="option"><input type="checkbox" name="q7c" value="f" /> c) Aktivierung</label>
+    <label class="option"><input type="checkbox" name="q7d" value="t" /> d) Orthopädisch</label>
+    <div class="feedback" id="fb-7"></div>
+  </div>
+
+  <div class="quiz-question">
+    <div class="q-num">Frage 9</div>
+    <div class="q-text">Was bedeutet KISS?</div>
+    <label class="option"><input type="radio" name="q8" value="a" /> a) Keep It Short and Smart</label>
+    <label class="option"><input type="radio" name="q8" value="b" /> b) Keep It Silly Simple</label>
+    <label class="option"><input type="radio" name="q8" value="c" /> c) Knowledge Is Success</label>
+    <div class="feedback" id="fb-8"></div>
+  </div>
+
+  <div class="quiz-question">
+    <div class="q-num">Frage 10</div>
+    <div class="q-text">Welche Garantie gibt SHAPES auf alle Editionen?</div>
+    <label class="option"><input type="radio" name="q9" value="a" /> a) 1 Jahr</label>
+    <label class="option"><input type="radio" name="q9" value="b" /> b) 2 Jahre</label>
+    <label class="option"><input type="radio" name="q9" value="c" /> c) 6 Monate</label>
+    <div class="feedback" id="fb-9"></div>
+  </div>
+
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn-primary" id="btn-check">Alle Antworten prüfen</button>
+    <button class="btn" id="btn-retry" style="display:none;">Wiederholen</button>
+  </div>
+  <div id="score-display"></div>
+
+  <hr class="rule" />
+
+  <!-- ═══════════════ SELBSTERKLÄRUNG ═══════════════ -->
+  <h2>Selbsterklärung</h2>
+  <p>Erkläre SHAPES in deinen eigenen Worten — so wie du es einem Interessenten erklären würdest. Schreibe mindestens 4–5 Sätze.</p>
+
+  <div style="margin:16px 0;padding:16px 20px;border-left:2px solid var(--clay);background:rgba(201,127,90,0.03);max-width:640px;font-size:14px;line-height:1.6;">
+    <strong>Deine Erklärung sollte diese Themen abdecken:</strong><br/>
+    • Was ist SHAPES? (aktivierendes System — keine Einlage, kein Schuh)<br/>
+    • Wie funktioniert es? (Druckpunkte, Fussmuskulatur, Propriozeption)<br/>
+    • Was kostet es und welche Garantie gibt es?<br/>
+    • Für wen ist es geeignet — und für wen nicht?<br/>
+    • Warum ist es anders als eine herkömmliche Einlage? (aktiv vs. passiv)<br/>
+    • Welche Begriffe vermeidest du? (Einlage, Sohle, orthopädisch)
+  </div>
+
+  <div class="explain-box">
+    <textarea id="explanation" placeholder="Schreibe hier deine Erklärung…"></textarea>
+    <div class="explain-hint">
+      <span id="char-count">0</span> Zeichen &nbsp;·&nbsp; Ideal: ab 250 Zeichen
+      <span id="auto-result" style="margin-left:12px;"></span>
+    </div>
+  </div>
+
+  <div class="oral-option">
+    <p><strong>Mündliche Alternative:</strong> Du kannst SHAPES auch mündlich erklären — gegenüber einer Kontrollperson (Manager:in, Teamleitung o. ä.). Die Person bestätigt die Erklärung mit ihrer Unterschrift im unteren Feld.</p>
+    <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;padding:8px 0;font-size:14px;">
+      <input type="checkbox" id="oral-check" style="margin-top:2px;flex-shrink:0;" />
+      <span>Ich habe SHAPES mündlich einer Kontrollperson erklärt.</span>
+    </label>
+    <div id="oral-confirm" style="display:none; margin-top: 12px;">
+      <div class="callout">
+        <div class="callout-title">Mündliche Erklärung bestätigt</div>
+        <p>Die Kontrollperson unterschreibt im Unterschriftenfeld weiter unten.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rule" />
+
+  <!-- ═══════════════ UNTERSCHRIFTEN ═══════════════ -->
+  <div id="signature-section">
+    <h2>Bestätigung</h2>
+    <p>Dieses Dokument bestätigt, dass die oben genannte Person SHAPES in eigenen Worten erklären kann — schriftlich oder mündlich.</p>
+
+    <div class="signature-field">
+      <div>Name der Teilnehmerin / des Teilnehmers:</div>
+      <input type="text" class="sig-input" id="sig-name" placeholder="Vorname Nachname" />
+    </div>
+
+    <div class="signature-field">
+      <div>Datum:</div>
+      <input type="text" class="sig-input" id="sig-date" placeholder="z.B. 12. Juni 2026" />
+    </div>
+
+    <div class="signature-field">
+      <div>Unterschrift der Kontrollperson (Manager:in, Teamleitung):</div>
+      <input type="text" class="sig-input" id="sig-signature" placeholder="Unterschrift" />
+      <div class="signature-label">Hiermit bestätige ich, dass die Erklärung korrekt und verständlich war.</div>
+    </div>
+
+    <div class="signature-field">
+      <div>Name der Kontrollperson in Druckbuchstaben:</div>
+      <input type="text" class="sig-input" id="sig-controller" placeholder="Vorname Nachname" />
+    </div>
+  </div>
+
+  <div class="btn-row" style="margin-top:24px;">
+    <button class="btn btn-primary" id="print-btn" onclick="window.print()">🖨️ Drucken / Als PDF speichern</button>
+    <a href="zertifikat.html" class="btn" id="cert-link" style="display:none;">🎓 Zum Zertifikat</a>
+  </div>
+
+</div>
+<script src="../../shared/shapes.js"></script>
+<script>
+// Gate check
+var allDone = isLessonComplete('m01-shapes-kennenlernen','quiz') &&
+              isLessonComplete('m02-balance-check','quiz') &&
+              isLessonComplete('m03-gasteservice','quiz') &&
+              isLessonComplete('m04-verkauf-alltag','quiz');
+if (!allDone) {
+  alert('Der Abschluss ist erst verfügbar, nachdem alle vier Module bestanden wurden.');
+  window.location.href = '../index.html';
+}
+
+// ── Self-explanation: auto-validation + char counter ──
+var ta = document.getElementById('explanation');
+var cc = document.getElementById('char-count');
+var ar = document.getElementById('auto-result');
+
+var KEYWORDS = ['aktivierend', 'system', 'fussmuskulatur', 'einlage', 'balance check',
+  'propriozeption', 'druckpunkte', 'spüren', 'schuh', 'passiv', 'trainiert',
+  'muskeln', '99', 'garantie', 'sporthochschule', 'deutschland'];
+
+function checkExplanation() {
+  if (!ta || !cc || !ar) return;
+  var text = ta.value.toLowerCase();
+  var len = ta.value.length;
+  cc.textContent = len;
+
+  if (len < 250) {
+    ar.innerHTML = '<span style="color:var(--incorrect);">🔴 Noch zu kurz (' + len + ' Zeichen, mind. 250)</span>';
+    return;
+  }
+
+  // Count how many key topics are covered
+  var found = 0;
+  var missing = [];
+  var topicGroups = {
+    was: ['aktivierend', 'system', 'fussmuskulatur', 'muskeln'],
+    funktion: ['druckpunkte', 'propriozeption', 'spüren', 'trainiert'],
+    abgrenzung: ['einlage', 'passiv', 'schuh'],
+    fakten: ['99', 'garantie', 'sporthochschule', 'deutschland']
+  };
+
+  for (var group in topicGroups) {
+    var words = topicGroups[group];
+    var hit = false;
+    for (var i = 0; i < words.length; i++) {
+      if (text.indexOf(words[i]) !== -1) { hit = true; break; }
+    }
+    if (hit) found++;
+    else missing.push(group);
+  }
+
+  if (found >= 3) {
+    ar.innerHTML = '<span style="color:var(--correct);">✅ Gut erklärt! ' + found + '/4 Themen abgedeckt (ab 250 Zeichen)</span>';
+  } else if (len >= 250) {
+    ar.innerHTML = '<span style="color:var(--clay);">🟡 ' + found + '/4 Themen — versuche auch die anderen Themen abzudecken</span>';
+  }
+}
+
+if (ta) {
+  ta.addEventListener('input', checkExplanation);
+}
+
+// ── Signature fields: save to localStorage for print ──
+['sig-name','sig-date','sig-signature','sig-controller'].forEach(function(id) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  var saved = localStorage.getItem('shapes-sig-' + id);
+  if (saved) el.value = saved;
+  el.addEventListener('input', function() {
+    localStorage.setItem('shapes-sig-' + id, this.value);
+  });
+});
+
+// ── Oral option toggle ──
+var oc = document.getElementById('oral-check');
+if (oc) {
+  oc.addEventListener('change', function() {
+    var cf = document.getElementById('oral-confirm');
+    if (cf) cf.style.display = this.checked ? 'block' : 'none';
+    var ta2 = document.getElementById('explanation');
+    if (ta2) {
+      if (this.checked) { ta2.style.opacity = '0.4'; ta2.disabled = true; }
+      else { ta2.style.opacity = '1'; ta2.disabled = false; }
+    }
+  });
+}
+
+// ── Custom quiz checker ──
+function customCheck() {
+  var correct = 0;
+  var total = 10;
+
+  // Q0: a
+  var q0 = document.querySelector('input[name="q0"]:checked');
+  var fb0 = document.getElementById('fb-0');
+  if (q0 && q0.value === 'a') { correct++; fb0.textContent = '✓'; fb0.className = 'feedback correct'; q0.parentElement.classList.add('correct'); }
+  else { fb0.textContent = '✗ Aktivierendes System für die Fussmuskulatur.'; fb0.className = 'feedback incorrect'; if(q0) q0.parentElement.classList.add('incorrect'); }
+
+  // Q1: a
+  var q1 = document.querySelector('input[name="q1"]:checked');
+  var fb1 = document.getElementById('fb-1');
+  if (q1 && q1.value === 'a') { correct++; fb1.textContent = '✓'; fb1.className = 'feedback correct'; q1.parentElement.classList.add('correct'); }
+  else { fb1.textContent = '✗ Allround 99 €, Hybrid 119 €, Golf 149 €.'; fb1.className = 'feedback incorrect'; if(q1) q1.parentElement.classList.add('incorrect'); }
+
+  // Q2: a
+  var q2 = document.querySelector('input[name="q2"]:checked');
+  var fb2 = document.getElementById('fb-2');
+  if (q2 && q2.value === 'a') { correct++; fb2.textContent = '✓'; fb2.className = 'feedback correct'; q2.parentElement.classList.add('correct'); }
+  else { fb2.textContent = '✗ Zu wenig Druck ist der häufigste Fehler.'; fb2.className = 'feedback incorrect'; if(q2) q2.parentElement.classList.add('incorrect'); }
+
+  // Q3: b
+  var q3 = document.querySelector('input[name="q3"]:checked');
+  var fb3 = document.getElementById('fb-3');
+  if (q3 && q3.value === 'b') { correct++; fb3.textContent = '✓'; fb3.className = 'feedback correct'; q3.parentElement.classList.add('correct'); }
+  else { fb3.textContent = '✗ Lauwarmes Wasser und milde Seife.'; fb3.className = 'feedback incorrect'; if(q3) q3.parentElement.classList.add('incorrect'); }
+
+  // Q4: b
+  var q4 = document.querySelector('input[name="q4"]:checked');
+  var fb4 = document.getElementById('fb-4');
+  if (q4 && q4.value === 'b') { correct++; fb4.textContent = '✓'; fb4.className = 'feedback correct'; q4.parentElement.classList.add('correct'); }
+  else { fb4.textContent = '✗ Direkt bei der Vorstellung.'; fb4.className = 'feedback incorrect'; if(q4) q4.parentElement.classList.add('incorrect'); }
+
+  // Q5: checkboxes — a,b,d correct; c wrong
+  var q5a = document.querySelector('input[name="q5a"]')?.checked;
+  var q5b = document.querySelector('input[name="q5b"]')?.checked;
+  var q5c = document.querySelector('input[name="q5c"]')?.checked;
+  var q5d = document.querySelector('input[name="q5d"]')?.checked;
+  var fb5 = document.getElementById('fb-5');
+  if (q5a && q5b && !q5c && q5d) { correct++; fb5.textContent = '✓ Richtig! a, b und d sind korrekt.'; fb5.className = 'feedback correct'; }
+  else { fb5.textContent = '✗ a, b und d sind korrekt — c (offen fragen: "Merken Sie etwas?") ist falsch.'; fb5.className = 'feedback incorrect'; }
+
+  // Q6: b
+  var q6 = document.querySelector('input[name="q6"]:checked');
+  var fb6 = document.getElementById('fb-6');
+  if (q6 && q6.value === 'b') { correct++; fb6.textContent = '✓'; fb6.className = 'feedback correct'; q6.parentElement.classList.add('correct'); }
+  else { fb6.textContent = '✗ Nicht in zertifizierten Arbeitssicherheitsschuhen (Ausnahme: Polizei, Bund).'; fb6.className = 'feedback incorrect'; if(q6) q6.parentElement.classList.add('incorrect'); }
+
+  // Q7: checkboxes — a,b,d correct; c wrong
+  var q7a = document.querySelector('input[name="q7a"]')?.checked;
+  var q7b = document.querySelector('input[name="q7b"]')?.checked;
+  var q7c = document.querySelector('input[name="q7c"]')?.checked;
+  var q7d = document.querySelector('input[name="q7d"]')?.checked;
+  var fb7 = document.getElementById('fb-7');
+  if (q7a && q7b && !q7c && q7d) { correct++; fb7.textContent = '✓ Richtig! Einlage, Sohle und orthopädisch sind zu vermeiden.'; fb7.className = 'feedback correct'; }
+  else { fb7.textContent = '✗ Einlage, Sohle, orthopädisch sind zu vermeiden — Aktivierung ist korrekt.'; fb7.className = 'feedback incorrect'; }
+
+  // Q8: b
+  var q8 = document.querySelector('input[name="q8"]:checked');
+  var fb8 = document.getElementById('fb-8');
+  if (q8 && q8.value === 'b') { correct++; fb8.textContent = '✓ Keep It Silly Simple!'; fb8.className = 'feedback correct'; q8.parentElement.classList.add('correct'); }
+  else { fb8.textContent = '✗ KISS = Keep It Silly Simple.'; fb8.className = 'feedback incorrect'; if(q8) q8.parentElement.classList.add('incorrect'); }
+
+  // Q9: b
+  var q9 = document.querySelector('input[name="q9"]:checked');
+  var fb9 = document.getElementById('fb-9');
+  if (q9 && q9.value === 'b') { correct++; fb9.textContent = '✓ 2 Jahre Garantie auf alle Editionen.'; fb9.className = 'feedback correct'; q9.parentElement.classList.add('correct'); }
+  else { fb9.textContent = '✗ 2 Jahre Garantie auf alle Editionen.'; fb9.className = 'feedback incorrect'; if(q9) q9.parentElement.classList.add('incorrect'); }
+
+  document.querySelectorAll('input').forEach(function(el) { el.disabled = true; });
+  var pct = Math.round(correct / total * 100);
+  var passed = pct >= 80;
+  var scoreEl = document.getElementById('score-display');
+  if (scoreEl) {
+    scoreEl.innerHTML = '<div class="score-card"><div class="score-pct ' + (passed ? 'score-pass' : 'score-fail') + '">' + pct + '%</div><div class="score-label">' + correct + ' von ' + total + ' richtig — ' + (passed ? 'Bestanden! 🎉' : 'Leider nicht bestanden. Versuche es erneut.') + '</div></div>';
+  }
+  document.getElementById('btn-check').style.display = 'none';
+  document.getElementById('btn-retry').style.display = 'inline-flex';
+  if (passed) {
+    markLessonComplete('m05-abschluss', 'quiz');
+    document.getElementById('cert-link').style.display = 'inline-flex';
+  }
+}
+
+function customReset() {
+  document.querySelectorAll('.quiz-question').forEach(function(q) {
+    q.querySelectorAll('.option').forEach(function(o) {
+      o.classList.remove('selected', 'correct', 'incorrect');
+      var inp = o.querySelector('input');
+      if (inp) { inp.checked = false; inp.disabled = false; }
+    });
+    var fb = q.querySelector('.feedback');
+    if (fb) { fb.textContent = ''; fb.className = 'feedback'; }
+  });
+  var sd = document.getElementById('score-display');
+  if (sd) sd.innerHTML = '';
+  document.getElementById('btn-check').style.display = 'inline-flex';
+  document.getElementById('btn-retry').style.display = 'none';
+  document.getElementById('cert-link').style.display = 'none';
+}
+
+document.getElementById('btn-check')?.addEventListener('click', customCheck);
+document.getElementById('btn-retry')?.addEventListener('click', customReset);
+</script>
+</body>
+</html>

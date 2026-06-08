@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Test — Zusammenfassung</title>
+  <link rel="stylesheet" href="../../shared/shapes.css" />
+</head>
+<body class="mod-m04">
+<aside class="sidebar" role="navigation">
+  <div class="sidebar-header">
+    <a href="../../index.html"><img src="../../assets/logos/LogoBlack.png" alt="SHAPES" class="sidebar-logo" /></a>
+    <a href="index.html" class="sidebar-back">← Modulübersicht</a>
+  </div>
+  <nav class="sidebar-nav" id="sidebar-nav"></nav>
+  <div class="sidebar-footer">
+    <div class="progress-summary" id="progress-summary"></div>
+  </div>
+</aside>
+<div class="main">
+  <div class="page-badge">Test</div>
+  <h1>Test</h1>
+  <p class="page-subtitle">6 Fragen. Ab 80 % bestanden.</p>
+  <hr class="rule" />
+
+  <div class="q-section" id="quiz-questions">
+
+  <!-- Frage 1 -->
+  <div class="quiz-question">
+    <div class="q-num">Frage 1</div>
+    <div class="q-text">Welche Garantie gibt SHAPES auf alle Editionen?</div>
+    <label class="option"><input type="radio" name="q0" value="a" /> a) 6 Monate</label>
+    <label class="option"><input type="radio" name="q0" value="b" /> b) 2 Jahre</label>
+    <label class="option"><input type="radio" name="q0" value="c" /> c) 1 Jahr</label>
+    <div class="feedback" id="fb-0"></div>
+  </div>
+
+  <!-- Frage 2: Multiple Choice — SHAPES Fakten -->
+  <div class="quiz-question">
+    <div class="q-num">Frage 2</div>
+    <div class="q-text">Welche Fakten über SHAPES sind korrekt? (Mehrere Antworten möglich)</div>
+    <label class="option"><input type="checkbox" name="q1a" value="t" /> a) Gewicht: 30 g pro Seite, Stärke: 2,7 mm</label>
+    <label class="option"><input type="checkbox" name="q1b" value="f" /> b) SHAPES wird über der Komfortsohle getragen</label>
+    <label class="option"><input type="checkbox" name="q1c" value="t" /> c) Patent: WO 2021/180409 A1, Made in Germany</label>
+    <label class="option"><input type="checkbox" name="q1d" value="f" /> d) SHAPES gibt es nur in Grösse 37–42</label>
+    <label class="option"><input type="checkbox" name="q1e" value="t" /> e) 9 von 10 Personen spüren den Unterschied sofort</label>
+    <div class="feedback" id="fb-1"></div>
+  </div>
+
+  <!-- Frage 3 -->
+  <div class="quiz-question">
+    <div class="q-num">Frage 3</div>
+    <div class="q-text">In welchen Schuhen kann SHAPES NICHT verwendet werden?</div>
+    <label class="option"><input type="radio" name="q2" value="a" /> a) Business- und Freizeitschuhen</label>
+    <label class="option"><input type="radio" name="q2" value="b" /> b) In zertifizierten Arbeitssicherheitsschuhen</label>
+    <label class="option"><input type="radio" name="q2" value="c" /> c) High Heels und offenen Schuhen</label>
+    <div class="feedback" id="fb-2"></div>
+  </div>
+
+  <!-- Frage 4: Multiple Choice — Team & Sichtbarkeit -->
+  <div class="quiz-question">
+    <div class="q-num">Frage 4</div>
+    <div class="q-text">Welche Aussagen zu Teamarbeit und Sichtbarkeit sind korrekt? (Mehrere Antworten möglich)</div>
+    <label class="option"><input type="checkbox" name="q3a" value="t" /> a) Regelmässige Team-Sessions (15 Min) halten das Wissen lebendig</label>
+    <label class="option"><input type="checkbox" name="q3b" value="f" /> b) Erfolge sollten mit Geldprämien belohnt werden</label>
+    <label class="option"><input type="checkbox" name="q3c" value="t" /> c) Mundpropaganda ist der stärkste Kanal — ein zufriedener Mensch zeigt es dem nächsten</label>
+    <label class="option"><input type="checkbox" name="q3d" value="f" /> d) SHAPES sollte möglichst an zehn verschiedenen Orten platziert werden</label>
+    <label class="option"><input type="checkbox" name="q3e" value="t" /> e) Demonstrations-Sets sollten täglich auf Sauberkeit geprüft werden</label>
+    <div class="feedback" id="fb-3"></div>
+  </div>
+
+  <!-- Frage 5 -->
+  <div class="quiz-question">
+    <div class="q-num">Frage 5</div>
+    <div class="q-text">Wie viel kostet die SHAPES Hybrid Edition?</div>
+    <label class="option"><input type="radio" name="q4" value="a" /> a) 99 €</label>
+    <label class="option"><input type="radio" name="q4" value="b" /> b) 119 €</label>
+    <label class="option"><input type="radio" name="q4" value="c" /> c) 149 €</label>
+    <div class="feedback" id="fb-4"></div>
+  </div>
+
+  <!-- Frage 6 -->
+  <div class="quiz-question">
+    <div class="q-num">Frage 6</div>
+    <div class="q-text">Wie reinigt man SHAPES richtig?</div>
+    <label class="option"><input type="radio" name="q5" value="a" /> a) Mit Alkohol und einem Tuch</label>
+    <label class="option"><input type="radio" name="q5" value="b" /> b) Mit lauwarmem Wasser und milder Seife</label>
+    <label class="option"><input type="radio" name="q5" value="c" /> c) In der Waschmaschine bei 30°</label>
+    <div class="feedback" id="fb-5"></div>
+  </div>
+
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn-primary" id="btn-check">Alle Antworten prüfen</button>
+    <button class="btn" id="btn-retry" style="display:none;">Wiederholen</button>
+  </div>
+  <div id="score-display"></div>
+  <div id="next-module" style="text-align:center;margin-top:16px;"></div>
+</div>
+<script src="../../shared/shapes.js"></script>
+<script>
+function customCheck() {
+  var correct = 0;
+  var total = 6;
+
+  // Q0: radio - b (2 Jahre)
+  var q0 = document.querySelector('input[name="q0"]:checked');
+  var fb0 = document.getElementById('fb-0');
+  if (q0 && q0.value === 'b') { correct++; fb0.textContent = '✓ Richtig! 2 Jahre Garantie auf alle Editionen.'; fb0.className = 'feedback correct'; q0.parentElement.classList.add('correct'); }
+  else { fb0.textContent = '✗ Falsch. SHAPES hat 2 Jahre Garantie auf alle Editionen.'; fb0.className = 'feedback incorrect'; if(q0) q0.parentElement.classList.add('incorrect'); }
+
+  // Q1: checkboxes — a,c,e correct; b,d wrong
+  var q1a = document.querySelector('input[name="q1a"]')?.checked;
+  var q1b = document.querySelector('input[name="q1b"]')?.checked;
+  var q1c = document.querySelector('input[name="q1c"]')?.checked;
+  var q1d = document.querySelector('input[name="q1d"]')?.checked;
+  var q1e = document.querySelector('input[name="q1e"]')?.checked;
+  var fb1 = document.getElementById('fb-1');
+  if (q1a && !q1b && q1c && !q1d && q1e) { correct++; fb1.textContent = '✓ Richtig! a, c und e sind korrekt.'; fb1.className = 'feedback correct'; }
+  else { fb1.textContent = '✗ Falsch. a, c und e sind korrekt — b (SHAPES wird unter der Komfortsohle getragen) und d (Grössen 1–10, EU 35–49) sind falsch.'; fb1.className = 'feedback incorrect'; }
+
+  // Q2: radio - b (Arbeitssicherheitsschuhe)
+  var q2 = document.querySelector('input[name="q2"]:checked');
+  var fb2 = document.getElementById('fb-2');
+  if (q2 && q2.value === 'b') { correct++; fb2.textContent = '✓ Richtig! In zertifizierten Arbeitssicherheitsschuhen nicht verwenden (Ausnahme: Polizei, Bund).'; fb2.className = 'feedback correct'; q2.parentElement.classList.add('correct'); }
+  else { fb2.textContent = '✗ Falsch. SHAPES darf nicht in zertifizierten Arbeitssicherheitsschuhen verwendet werden.'; fb2.className = 'feedback incorrect'; if(q2) q2.parentElement.classList.add('incorrect'); }
+
+  // Q3: checkboxes — a,c,e correct; b,d wrong
+  var q3a = document.querySelector('input[name="q3a"]')?.checked;
+  var q3b = document.querySelector('input[name="q3b"]')?.checked;
+  var q3c = document.querySelector('input[name="q3c"]')?.checked;
+  var q3d = document.querySelector('input[name="q3d"]')?.checked;
+  var q3e = document.querySelector('input[name="q3e"]')?.checked;
+  var fb3 = document.getElementById('fb-3');
+  if (q3a && !q3b && q3c && !q3d && q3e) { correct++; fb3.textContent = '✓ Richtig! a, c und e sind korrekt.'; fb3.className = 'feedback correct'; }
+  else { fb3.textContent = '✗ Falsch. a, c und e sind korrekt — b (Anerkennung, nicht Geld) und d (lieber an wenigen Orten perfekt platziert) sind falsch.'; fb3.className = 'feedback incorrect'; }
+
+  // Q4: radio - b (119€)
+  var q4 = document.querySelector('input[name="q4"]:checked');
+  var fb4 = document.getElementById('fb-4');
+  if (q4 && q4.value === 'b') { correct++; fb4.textContent = '✓ Richtig! Hybrid Edition: 119 €.'; fb4.className = 'feedback correct'; q4.parentElement.classList.add('correct'); }
+  else { fb4.textContent = '✗ Falsch. Allround 99 €, Hybrid 119 €, Golf 149 €.'; fb4.className = 'feedback incorrect'; if(q4) q4.parentElement.classList.add('incorrect'); }
+
+  // Q5: radio - b (Wasser + Seife)
+  var q5 = document.querySelector('input[name="q5"]:checked');
+  var fb5 = document.getElementById('fb-5');
+  if (q5 && q5.value === 'b') { correct++; fb5.textContent = '✓ Richtig! Lauwarmes Wasser und milde Seife — mehr nicht.'; fb5.className = 'feedback correct'; q5.parentElement.classList.add('correct'); }
+  else { fb5.textContent = '✗ Falsch. SHAPES wird mit lauwarmem Wasser und milder Seife gereinigt, an der Luft getrocknet.'; fb5.className = 'feedback incorrect'; if(q5) q5.parentElement.classList.add('incorrect'); }
+
+  // Disable all
+  document.querySelectorAll('input').forEach(function(el) { el.disabled = true; });
+
+  var pct = Math.round(correct / total * 100);
+  var passed = pct >= 80;
+  var scoreEl = document.getElementById('score-display');
+  if (scoreEl) {
+    scoreEl.innerHTML = '<div class="score-card"><div class="score-pct ' + (passed ? 'score-pass' : 'score-fail') + '">' + pct + '%</div><div class="score-label">' + correct + ' von ' + total + ' richtig — ' + (passed ? 'Bestanden! 🎉' : 'Leider nicht bestanden. Versuche es erneut.') + '</div></div>';
+  }
+  document.getElementById('btn-check').style.display = 'none';
+  document.getElementById('btn-retry').style.display = 'inline-flex';
+  if (passed) {
+    markLessonComplete('m04-verkauf-alltag', 'quiz');
+    document.getElementById('next-module').innerHTML = '<a href="../m05-abschluss/index.html" class="btn btn-primary">Weiter zu Abschluss & Zertifikat →</a>';
+  }
+}
+
+function customReset() {
+  document.querySelectorAll('.quiz-question').forEach(function(q) {
+    q.querySelectorAll('.option').forEach(function(o) {
+      o.classList.remove('selected', 'correct', 'incorrect');
+      var inp = o.querySelector('input');
+      if (inp) { inp.checked = false; inp.disabled = false; }
+    });
+    var fb = q.querySelector('.feedback');
+    if (fb) { fb.textContent = ''; fb.className = 'feedback'; }
+  });
+  document.getElementById('score-display') ? document.getElementById('score-display').innerHTML = '' : null;
+  document.getElementById('btn-check').style.display = 'inline-flex';
+  document.getElementById('btn-retry').style.display = 'none';
+  document.getElementById('next-module').innerHTML = '';
+}
+
+document.getElementById('btn-check')?.addEventListener('click', customCheck);
+document.getElementById('btn-retry')?.addEventListener('click', customReset);
+</script>
+</body>
+</html>

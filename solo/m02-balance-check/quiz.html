@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Test — Balance Check & Praxis</title>
+  <link rel="stylesheet" href="../../shared/shapes.css" />
+</head>
+<body class="mod-m02">
+<aside class="sidebar" role="navigation">
+  <div class="sidebar-header">
+    <a href="../../index.html"><img src="../../assets/logos/LogoBlack.png" alt="SHAPES" class="sidebar-logo" /></a>
+    <a href="index.html" class="sidebar-back">← Modulübersicht</a>
+  </div>
+  <nav class="sidebar-nav" id="sidebar-nav"></nav>
+  <div class="sidebar-footer">
+    <div class="progress-summary" id="progress-summary"></div>
+  </div>
+</aside>
+<div class="main">
+  <div class="page-badge">Test</div>
+  <h1>Test</h1>
+  <p class="page-subtitle">6 Fragen. Ab 80 % bestanden.</p>
+  <hr class="rule" />
+
+  <div class="q-section" id="quiz-questions">
+
+  <!-- Frage 1 -->
+  <div class="quiz-question">
+    <div class="q-num">Frage 1</div>
+    <div class="q-text">Was ist der häufigste Fehler beim Balance Check?</div>
+    <label class="option"><input type="radio" name="q0" value="a" /> a) Zu wenig Druck</label>
+    <label class="option"><input type="radio" name="q0" value="b" /> b) Zu viel Druck</label>
+    <label class="option"><input type="radio" name="q0" value="c" /> c) Falsche Schuhgrösse</label>
+    <div class="feedback" id="fb-0"></div>
+  </div>
+
+  <!-- Frage 2: Multiple Choice — korrekte Balance-Check-Schritte -->
+  <div class="quiz-question">
+    <div class="q-num">Frage 2</div>
+    <div class="q-text">Welche Aussagen zum Balance Check sind korrekt? (Mehrere Antworten möglich)</div>
+    <label class="option"><input type="checkbox" name="q2a" value="t" /> a) Die Hände werden verschränkt, Handflächen zeigen nach oben</label>
+    <label class="option"><input type="checkbox" name="q2b" value="t" /> b) Schritt 1 und 2 werden von vorne und von hinten durchgeführt</label>
+    <label class="option"><input type="checkbox" name="q2c" value="t" /> c) Nach dem Einlegen von SHAPES wird der Gast zum Gehen aufgefordert</label>
+    <label class="option"><input type="checkbox" name="q2d" value="t" /> d) Man fragt offen: "Merken Sie etwas?" — nicht suggestiv</label>
+    <label class="option"><input type="checkbox" name="q2e" value="f" /> e) Der Balance Check funktioniert nur barfuss</label>
+    <div class="feedback" id="fb-1"></div>
+  </div>
+
+  <!-- Frage 3 -->
+  <div class="quiz-question">
+    <div class="q-num">Frage 3</div>
+    <div class="q-text">Was fragst du nach dem Balance Check?</div>
+    <label class="option"><input type="radio" name="q1" value="a" /> a) "Spüren Sie den Unterschied?"</label>
+    <label class="option"><input type="radio" name="q1" value="b" /> b) "Merken Sie etwas?"</label>
+    <label class="option"><input type="radio" name="q1" value="c" /> c) "Wollen Sie kaufen?"</label>
+    <div class="feedback" id="fb-2"></div>
+  </div>
+
+  <!-- Frage 4 -->
+  <div class="quiz-question">
+    <div class="q-num">Frage 4</div>
+    <div class="q-text">Welche Fitting-Regel ist korrekt?</div>
+    <label class="option"><input type="radio" name="q3" value="a" /> a) Im Zweifel die grössere Grösse wählen</label>
+    <label class="option"><input type="radio" name="q3" value="b" /> b) Im Zweifel die kleinere Grösse wählen</label>
+    <label class="option"><input type="radio" name="q3" value="c" /> c) Immer Grösse 3 nehmen</label>
+    <div class="feedback" id="fb-3"></div>
+  </div>
+
+  <!-- Frage 5 -->
+  <div class="quiz-question">
+    <div class="q-num">Frage 5</div>
+    <div class="q-text">Womit wird SHAPES gereinigt?</div>
+    <label class="option"><input type="radio" name="q4" value="a" /> a) Alkohol und Tuch</label>
+    <label class="option"><input type="radio" name="q4" value="b" /> b) Lauwarmes Wasser und milde Seife</label>
+    <label class="option"><input type="radio" name="q4" value="c" /> c) Desinfektionsmittel</label>
+    <div class="feedback" id="fb-4"></div>
+  </div>
+
+  <!-- Frage 6: Multiple Choice — Gästegespräch -->
+  <div class="quiz-question">
+    <div class="q-num">Frage 6</div>
+    <div class="q-text">Welche Aussagen zum Gästegespräch sind korrekt? (Mehrere Antworten möglich)</div>
+    <label class="option"><input type="checkbox" name="q5a" value="t" /> a) Die Struktur ist: Öffner → Balance Check → Dialog → Empfehlung → Abschluss</label>
+    <label class="option"><input type="checkbox" name="q5b" value="t" /> b) Der Preis wird direkt bei der Vorstellung von SHAPES genannt — kein Versteckspiel</label>
+    <label class="option"><input type="checkbox" name="q5c" value="t" /> c) Jeder Einwand ist eine versteckte Frage</label>
+    <label class="option"><input type="checkbox" name="q5d" value="t" /> d) Die Reihenfolge des Gesprächs kann situativ angepasst werden — direkt der Balance Check ist oft am wirksamsten</label>
+    <label class="option"><input type="checkbox" name="q5e" value="f" /> e) Ein gutes Gespräch braucht mindestens 15 Minuten</label>
+    <div class="feedback" id="fb-5"></div>
+  </div>
+
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn-primary" id="btn-check">Alle Antworten prüfen</button>
+    <button class="btn" id="btn-retry" style="display:none;">Wiederholen</button>
+  </div>
+  <div id="score-display"></div>
+</div>
+<script src="../../shared/shapes.js"></script>
+<script>
+function customCheck() {
+  var correct = 0;
+  var total = 6;
+
+  // Q0: radio - a (zu wenig Druck)
+  var q0 = document.querySelector('input[name="q0"]:checked');
+  var fb0 = document.getElementById('fb-0');
+  if (q0 && q0.value === 'a') { correct++; fb0.textContent = '✓ Richtig!'; fb0.className = 'feedback correct'; q0.parentElement.classList.add('correct'); }
+  else { fb0.textContent = '✗ Falsch. Der häufigste Fehler ist zu wenig Druck.'; fb0.className = 'feedback incorrect'; if(q0) q0.parentElement.classList.add('incorrect'); }
+
+  // Q1: checkboxes — a,b,c correct, d,e wrong
+  var q2a = document.querySelector('input[name="q2a"]')?.checked;
+  var q2b = document.querySelector('input[name="q2b"]')?.checked;
+  var q2c = document.querySelector('input[name="q2c"]')?.checked;
+  var q2d = document.querySelector('input[name="q2d"]')?.checked;
+  var q2e = document.querySelector('input[name="q2e"]')?.checked;
+  var fb1 = document.getElementById('fb-1');
+  if (q2a && q2b && q2c && q2d && !q2e) { correct++; fb1.textContent = '✓ Richtig! a, b, c und d sind korrekt.'; fb1.className = 'feedback correct'; }
+  else { fb1.textContent = '✗ Falsch. a, b, c und d sind korrekt — nur e (geht auch mit Schuhen) ist falsch.'; fb1.className = 'feedback incorrect'; }
+
+  // Q2: radio - b
+  var q1 = document.querySelector('input[name="q1"]:checked');
+  var fb2 = document.getElementById('fb-2');
+  if (q1 && q1.value === 'b') { correct++; fb2.textContent = '✓ Richtig! Offen fragen: "Merken Sie etwas?"'; fb2.className = 'feedback correct'; q1.parentElement.classList.add('correct'); }
+  else { fb2.textContent = '✗ Falsch. Die offene Frage heisst: "Merken Sie etwas?" — nicht "Spüren Sie den Unterschied?".'; fb2.className = 'feedback incorrect'; if(q1) q1.parentElement.classList.add('incorrect'); }
+
+  // Q3: radio - b
+  var q3 = document.querySelector('input[name="q3"]:checked');
+  var fb3 = document.getElementById('fb-3');
+  if (q3 && q3.value === 'b') { correct++; fb3.textContent = '✓ Richtig! Im Zweifel immer die kleinere Grösse.'; fb3.className = 'feedback correct'; q3.parentElement.classList.add('correct'); }
+  else { fb3.textContent = '✗ Falsch. Bei Unsicherheit lieber die kleinere Grösse wählen.'; fb3.className = 'feedback incorrect'; if(q3) q3.parentElement.classList.add('incorrect'); }
+
+  // Q4: radio - b
+  var q4 = document.querySelector('input[name="q4"]:checked');
+  var fb4 = document.getElementById('fb-4');
+  if (q4 && q4.value === 'b') { correct++; fb4.textContent = '✓ Richtig! Lauwarmes Wasser und milde Seife reichen völlig.'; fb4.className = 'feedback correct'; q4.parentElement.classList.add('correct'); }
+  else { fb4.textContent = '✗ Falsch. SHAPES wird mit lauwarmem Wasser und milder Seife gereinigt.'; fb4.className = 'feedback incorrect'; if(q4) q4.parentElement.classList.add('incorrect'); }
+
+  // Q5: checkboxes — a,c,d correct, b,e wrong
+  var q5a = document.querySelector('input[name="q5a"]')?.checked;
+  var q5b = document.querySelector('input[name="q5b"]')?.checked;
+  var q5c = document.querySelector('input[name="q5c"]')?.checked;
+  var q5d = document.querySelector('input[name="q5d"]')?.checked;
+  var q5e = document.querySelector('input[name="q5e"]')?.checked;
+  var fb5 = document.getElementById('fb-5');
+  if (q5a && q5b && q5c && q5d && !q5e) { correct++; fb5.textContent = '✓ Richtig! Alle vier Aussagen sind korrekt.'; fb5.className = 'feedback correct'; }
+  else { fb5.textContent = '✗ Falsch. a, b, c und d sind korrekt — nur e (keine Zeitvorgabe) ist falsch.'; fb5.className = 'feedback incorrect'; }
+
+  // Disable all inputs
+  document.querySelectorAll('input').forEach(function(el) { el.disabled = true; });
+
+  var pct = Math.round(correct / total * 100);
+  var passed = pct >= 80;
+  var scoreEl = document.getElementById('score-display');
+  if (scoreEl) {
+    scoreEl.innerHTML = '<div class="score-card"><div class="score-pct ' + (passed ? 'score-pass' : 'score-fail') + '">' + pct + '%</div><div class="score-label">' + correct + ' von ' + total + ' richtig — ' + (passed ? 'Bestanden! 🎉' : 'Leider nicht bestanden. Versuche es erneut.') + '</div></div>';
+  if (passed) { scoreEl.innerHTML += '<div style=\"text-align:center;margin-top:16px;\"><a href=\"../m03-gasteservice/index.html\" class=\"btn btn-primary\">Weiter zu Kommunikation →</a></div>'; }
+  }
+  document.getElementById('btn-check').style.display = 'none';
+  document.getElementById('btn-retry').style.display = 'inline-flex';
+  if (passed) markLessonComplete('m02-balance-check', 'quiz');
+}
+
+function customReset() {
+  document.querySelectorAll('.quiz-question').forEach(function(q) {
+    q.querySelectorAll('.option').forEach(function(o) {
+      o.classList.remove('selected', 'correct', 'incorrect');
+      var inp = o.querySelector('input');
+      if (inp) { inp.checked = false; inp.disabled = false; }
+    });
+    var fb = q.querySelector('.feedback');
+    if (fb) { fb.textContent = ''; fb.className = 'feedback'; }
+  });
+  document.getElementById('score-display') ? document.getElementById('score-display').innerHTML = '' : null;
+  document.getElementById('btn-check').style.display = 'inline-flex';
+  document.getElementById('btn-retry').style.display = 'none';
+}
+
+document.getElementById('btn-check')?.addEventListener('click', customCheck);
+document.getElementById('btn-retry')?.addEventListener('click', customReset);
+</script>
+</body>
+</html>

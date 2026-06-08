@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SHAPES Training — Solo</title>
+  <link rel="stylesheet" href="../shared/shapes.css" />
+</head>
+<body>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <a href="../index.html"><img src="../assets/logos/LogoBlack.png" alt="SHAPES" class="sidebar-logo" /></a>
+  </div>
+  <nav class="sidebar-nav" id="sidebar-nav"></nav>
+  <div class="sidebar-footer">
+    <div class="progress-summary" id="progress-summary"></div>
+  </div>
+</div>
+<div class="main">  <div class="page-badge">👤 Eigenes Tempo</div>
+  <h1>SHAPES Training — Solo</h1>
+  <p class="page-subtitle">Lerne selbstbestimmt. Jede Lektion speichert deinen Fortschritt. Am Ende jedes Moduls wartet ein Test.</p>
+  <hr class="rule" />
+  <div class="section-label">Module</div>
+  <div class="lesson-list">
+    <a href="m01-shapes-kennenlernen/index.html" class="lesson-item">
+      <span class="lesson-number-circle">01</span>
+      <span class="lesson-info">
+        <span class="lesson-title">SHAPES Grundlagen</span>
+        <span class="lesson-desc">Was SHAPES ist, wie es funktioniert, die Editionen, der Balance Check und die Markensprache.</span>
+      </span>
+    </a>
+    <a href="m02-balance-check/index.html" class="lesson-item">
+      <span class="lesson-number-circle">02</span>
+      <span class="lesson-info">
+        <span class="lesson-title">Balance Check &amp; Praxis</span>
+        <span class="lesson-desc">Der Balance Check, das Gästegespräch, SHAPES an Bord und die tägliche Anwendung.</span>
+      </span>
+    </a>
+    <a href="m03-gasteservice/index.html" class="lesson-item">
+      <span class="lesson-number-circle">03</span>
+      <span class="lesson-info">
+        <span class="lesson-title">Kommunikation</span>
+        <span class="lesson-desc">Gäste ansprechen, Einwände begegnen, Touchpoints nutzen und erfolgreich kommunizieren.</span>
+      </span>
+    </a>
+    <a href="m04-verkauf-alltag/index.html" class="lesson-item">
+      <span class="lesson-number-circle">04</span>
+      <span class="lesson-info">
+        <span class="lesson-title">Zusammenfassung</span>
+        <span class="lesson-desc">Wissen teilen, Sichtbarkeit schaffen, Erfolge austauschen — und alles auf einen Blick.</span>
+      </span>
+    </a>
+    <a href="m05-abschluss/index.html" class="lesson-item">
+      <span class="lesson-number-circle">05</span>
+      <span class="lesson-info">
+        <span class="lesson-title">Abschluss &amp; Zertifikat</span>
+        <span class="lesson-desc">Abschlussquiz und druckbares Zertifikat.</span>
+      </span>
+    </a>
+  </div>
+
+  <div style="margin-top:32px;text-align:center;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+    <a href="m05-abschluss/zertifikat.html" class="btn" style="font-size:12px;">🎓 Zertifikat</a>
+    <button onclick="resetProgress()" class="btn" style="font-size:11px;color:var(--ash);border-color:var(--ash);">🔄 Fortschritt zurücksetzen</button>
+  </div>
+</div>
+<script src="../shared/shapes.js"></script>
+<script>
+function resetProgress() {
+  if (confirm('Gesamten Fortschritt zurücksetzen?\n\nAlle Lektionen und Tests werden auf ungelesen gesetzt.\nAlle Fortschrittsbalken werden auf 0 % zurückgesetzt.\n\nDiese Aktion kann nicht rückgängig gemacht werden.')) {
+    localStorage.removeItem('shapes-training-progress');
+    location.reload();
+  }
+}
+document.addEventListener('DOMContentLoaded', function() {
+  renderSidebar();
+  var p = getProgress();
+  var items = document.querySelectorAll('.lesson-item');
+  items.forEach(function(item) {
+    var href = item.getAttribute('href');
+    if (!href) return;
+    var modId = href.replace('index.html', '').replace('/', '');
+    if (modId && p['shapes-training'] && p['shapes-training'][modId]) {
+      var done = 0, total = 0;
+      var mod = MODULES.find(function(m) { return m.id === modId; });
+      if (mod) {
+        for (var i = 1; i <= mod.lessons; i++) {
+          var lid = 'l' + (i < 10 ? '0' : '') + i;
+          if (p['shapes-training'][modId][lid]) done++;
+        }
+        if (p['shapes-training'][modId]['quiz']) done++;
+        total = mod.lessons + 1;
+        if (done === total) {
+          var circle = item.querySelector('.lesson-number-circle');
+          if (circle) { circle.textContent = '✓'; circle.style.background = '#C97F5A'; circle.style.color = 'white'; circle.style.borderColor = '#C97F5A'; }
+        }
+      }
+    }
+  });
+});
+</script>
+</body>
+</html>

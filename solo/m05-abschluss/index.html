@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modul 05 — Abschluss & Zertifikat</title>
+  <link rel="stylesheet" href="../../shared/shapes.css" />
+</head>
+<body class="mod-m05">
+<aside class="sidebar" role="navigation">
+  <div class="sidebar-header">
+    <a href="../../index.html"><img src="../../assets/logos/LogoBlack.png" alt="SHAPES" class="sidebar-logo" /></a>
+    <a href="../index.html" class="sidebar-back">← Übersicht</a>
+  </div>
+  <nav class="sidebar-nav" id="sidebar-nav"></nav>
+  <div class="sidebar-footer">
+    <div class="progress-summary" id="progress-summary"></div>
+  </div>
+</aside>
+<div class="main">
+  <div class="page-badge">Abschluss & Zertifikat</div>
+  <h1>Abschluss & Zertifikat</h1>
+  <p class="page-subtitle">Du hast alle vier Module durchgearbeitet. Jetzt folgt der Abschluss — mit Wissenstest, Selbsterklärung und Zertifikat.</p>
+  <hr class="rule" />
+  <div class="section-label">Abschluss</div>
+  <div class="lesson-list">
+    <a href="quiz.html" class="lesson-item" id="quiz-item">
+      <span class="lesson-number-circle">★</span>
+      <span class="lesson-info">
+        <span class="lesson-title" id="quiz-title">Abschluss</span>
+        <span class="lesson-desc">10 Fragen, Selbsterklärung zu SHAPES und druckbare Bestätigung.</span>
+      </span>
+    </a>
+    <a href="zertifikat.html" class="lesson-item" id="cert-item">
+      <span class="lesson-number-circle">🎓</span>
+      <span class="lesson-info">
+        <span class="lesson-title" id="cert-title">Zertifikat</span>
+        <span class="lesson-desc">Dein persönliches SHAPES-Training-Zertifikat zum Ausdrucken.</span>
+      </span>
+    </a>
+  </div>
+</div>
+<script src="../../shared/shapes.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  renderSidebar();
+  var allModsDone = isLessonComplete('m01-shapes-kennenlernen','quiz') &&
+                    isLessonComplete('m02-balance-check','quiz') &&
+                    isLessonComplete('m03-gasteservice','quiz') &&
+                    isLessonComplete('m04-verkauf-alltag','quiz');
+  var abschlussDone = isLessonComplete('m05-abschluss','quiz');
+
+  if (!allModsDone) {
+    var el = document.getElementById('quiz-item');
+    if (el) { el.style.opacity = '0.4'; el.style.pointerEvents = 'none'; el.style.cursor = 'not-allowed'; }
+    document.getElementById('quiz-title').textContent = '🔒 Abschluss (erst alle Module abschliessen)';
+    document.getElementById('cert-title').textContent = '🔒 Zertifikat (erst Abschluss bestehen)';
+    var cel = document.getElementById('cert-item');
+    if (cel) { cel.style.opacity = '0.4'; cel.style.pointerEvents = 'none'; cel.style.cursor = 'not-allowed'; }
+  } else if (!abschlussDone) {
+    var cel2 = document.getElementById('cert-item');
+    if (cel2) { cel2.style.opacity = '0.4'; cel2.style.pointerEvents = 'none'; cel2.style.cursor = 'not-allowed'; }
+    document.getElementById('cert-title').textContent = '🔒 Zertifikat (erst Abschluss bestehen)';
+  }
+});
+</script>
+</body>
+</html>

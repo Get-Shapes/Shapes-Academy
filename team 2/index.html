@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SHAPES Training — Team</title>
+  <link rel="stylesheet" href="../shared/shapes.css" />
+</head>
+<body>
+<aside class="sidebar" role="navigation">
+  <div class="sidebar-header">
+    <a href="../index.html"><img src="../assets/logos/LogoBlack.png" alt="SHAPES" class="sidebar-logo" /></a>
+    <a href="../index.html" class="sidebar-back">← Startseite</a>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="sidebar-module">
+      <div class="sidebar-module-header"><span>Team-Training</span></div>
+      <a href="index.html" class="sidebar-lesson active"><span class="sidebar-lesson-icon"></span><span>Dashboard</span></a>
+      <a href="sessions/rollenspiele.html" class="sidebar-lesson"><span class="sidebar-lesson-icon"></span><span>Rollenspiele</span></a>
+      <a href="sessions/team-quiz.html" class="sidebar-lesson"><span class="sidebar-lesson-icon"></span><span>Team-Quiz</span></a>
+    </div>
+  </nav>
+  <div class="sidebar-footer">
+    <div class="progress-summary" id="progress-summary"></div>
+  </div>
+</aside>
+<div class="main">
+  <div class="page-badge">👥 Gemeinsam lernen</div>
+  <h1>SHAPES Training — Team</h1>
+  <p class="page-subtitle">Trainiere mit 2–8 Personen. Du führst durch die Module, alle sehen mit. Diskussionsfragen, Rollenspiele und Team-Quiz sind direkt eingebaut.</p>
+
+  <div class="callout" style="max-width:100%;">
+    <div class="callout-title">👥 So funktioniert's</div>
+    <p>1. Wähle ein Modul unten.<br/>2. Die Seiten werden im Team-Modus geöffnet — grössere Schrift, Diskussionsboxen und Team-Übungen sind sichtbar.<br/>3. Jede:r kann mitlesen, du steuerst den Durchlauf.<br/>4. Kein Fortschritt wird gespeichert — der Fokus liegt auf dem gemeinsamen Lernen.</p>
+  </div>
+
+  <hr class="rule" />
+  <div class="section-label">Module</div>
+  <div class="lesson-list">
+    <a href="../solo/m01-shapes-kennenlernen/l01.html?team" class="lesson-item">
+      <span class="lesson-number-circle">01</span>
+      <span class="lesson-info">
+        <span class="lesson-title">SHAPES Grundlagen</span>
+        <span class="lesson-desc">4 Lektionen mit Team-Diskussionen. Produkt, Funktion, Editionen und Markensprache.</span>
+      </span>
+    </a>
+    <a href="../solo/m02-balance-check/l01.html?team" class="lesson-item">
+      <span class="lesson-number-circle">02</span>
+      <span class="lesson-info">
+        <span class="lesson-title">Balance Check &amp; Praxis</span>
+        <span class="lesson-desc">4 Lektionen. Balance Check live üben, Gastgespräch, Praxis und Alltag.</span>
+      </span>
+    </a>
+    <a href="../solo/m03-gasteservice/l01.html?team" class="lesson-item">
+      <span class="lesson-number-circle">03</span>
+      <span class="lesson-info">
+        <span class="lesson-title">Kommunikation</span>
+        <span class="lesson-desc">4 Lektionen mit Rollenspielen. Grundlagen, Einwände, Kurzvortrag, erfolgreich kommunizieren.</span>
+      </span>
+    </a>
+    <a href="../solo/m04-verkauf-alltag/l01.html?team" class="lesson-item">
+      <span class="lesson-number-circle">04</span>
+      <span class="lesson-info">
+        <span class="lesson-title">Zusammenfassung</span>
+        <span class="lesson-desc">3 Lektionen. Wissen teilen, Sichtbarkeit und alles auf einen Blick.</span>
+      </span>
+    </a>
+  </div>
+
+  <hr class="rule" />
+  <div class="section-label">Team-Übungen</div>
+  <div class="lesson-list" style="margin-top:16px;">
+    <a href="sessions/rollenspiele.html" class="lesson-item">
+      <span class="lesson-number-circle">🎭</span>
+      <span class="lesson-info">
+        <span class="lesson-title">Rollenspiele</span>
+        <span class="lesson-desc">15 Szenarien — Physio, Fitness, Fachhandel, Schiff. Mit Rollenverteilung und Leitfaden.</span>
+      </span>
+    </a>
+    <a href="sessions/team-quiz.html" class="lesson-item">
+      <span class="lesson-number-circle">🏆</span>
+      <span class="lesson-info">
+        <span class="lesson-title">Team-Quiz</span>
+        <span class="lesson-desc">15 Fragen aus allen Modulen — das Team diskutiert, du löst auf.</span>
+      </span>
+    </a>
+    <a href="../solo/m05-abschluss/zertifikat.html" class="lesson-item">
+      <span class="lesson-number-circle">🎓</span>
+      <span class="lesson-info">
+        <span class="lesson-title">Zertifikat</span>
+        <span class="lesson-desc">Druckbares Zertifikat für alle Teilnehmenden.</span>
+      </span>
+    </a>
+  </div>
+
+  <div style="margin-top:32px;text-align:center;padding-bottom:48px;">
+    <button onclick="if(confirm('Gesamten Fortschritt zurücksetzen?')){localStorage.removeItem('shapes-training-progress');alert('Fortschritt wurde zurückgesetzt.');location.reload();}" class="btn" style="font-size:11px;color:var(--ash);border-color:var(--ash);">🔄 Fortschritt zurücksetzen</button>
+  </div>
+</div>
+<script src="../shared/shapes.js"></script>
+</body>
+</html>

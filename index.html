@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SHAPES Training</title>
+  <link rel="stylesheet" href="shared/shapes.css" />
+  <style>
+    /* ── Landing page overrides ── */
+    body { display: block; min-height: 100vh; background: var(--white); }
+
+    .hero {
+      display: flex; flex-direction: column; align-items: center;
+      min-height: 100vh; padding: 0 24px;
+      background: linear-gradient(180deg, var(--white) 0%, rgba(201,127,90,0.04) 50%, var(--white) 100%);
+    }
+
+    .hero-inner {
+      max-width: 1200px; width: 100%;
+      display: flex; flex-direction: column; align-items: center;
+      padding: 60px 0 40px;
+    }
+
+    /* Brand bar */
+    .brand-bar {
+      width: 100%; display: flex; justify-content: space-between;
+      align-items: center; padding: 0 0 40px; border-bottom: var(--rule);
+    }
+    .brand-bar .logo { height: 36px; width: auto; }
+    .brand-bar .tagline {
+      font-family: var(--font-mono); font-size: 10px;
+      letter-spacing: 0.1em; color: var(--ash); text-transform: uppercase;
+    }
+
+    /* Hero content */
+    .hero-content {
+      display: flex; align-items: center; gap: 80px;
+      padding: 60px 0; width: 100%;
+    }
+    .hero-text { flex: 1; max-width: 520px; }
+    .hero-text .badge {
+      font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--clay); margin-bottom: 16px;
+    }
+    .hero-text h1 {
+      font-family: var(--font-display); font-size: clamp(40px, 5vw, 56px);
+      font-weight: 400; line-height: 1.1; color: var(--ink);
+      letter-spacing: -0.015em; margin-bottom: 16px;
+    }
+    .hero-text h1 em { font-style: italic; color: var(--clay); }
+    .hero-text p {
+      font-size: 17px; line-height: 1.6; color: var(--graphite);
+      max-width: 440px; margin-bottom: 36px;
+    }
+    .hero-image {
+      flex: 1; max-width: 480px; display: flex; justify-content: center;
+    }
+    .hero-image img {
+      width: 100%; height: auto; max-height: 400px;
+      object-fit: contain; border-radius: 8px;
+    }
+
+    /* Stats row */
+    .stats {
+      display: flex; gap: 48px; margin: 8px 0 48px;
+      border-top: var(--rule); padding-top: 32px; width: 100%; justify-content: center;
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      font-family: var(--font-display); font-size: 28px; font-weight: 400; color: var(--ink); line-height: 1;
+    }
+    .stat-label {
+      font-family: var(--font-mono); font-size: 9.5px;
+      letter-spacing: 0.1em; color: var(--ash); text-transform: uppercase; margin-top: 6px;
+    }
+
+    /* Mode cards stacked horizontally */
+    .mode-section { width: 100%; padding: 40px 0 20px; }
+    .mode-section .section-title {
+      font-family: var(--font-mono); font-size: 10px; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--ash); margin-bottom: 28px; text-align: center;
+    }
+    .mode-grid {
+      display: flex; gap: 24px; justify-content: center; flex-wrap: wrap;
+    }
+    .mode-card {
+      flex: 1; min-width: 280px; max-width: 400px; padding: 40px 36px;
+      border: 1px solid rgba(107,104,98,0.25); border-radius: 8px;
+      text-decoration: none; color: inherit; display: flex; flex-direction: column;
+      transition: all 0.3s ease; background: var(--white);
+    }
+    .mode-card:hover {
+      border-color: var(--clay); transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(201,127,90,0.1);
+    }
+    .mode-card-icon {
+      width: 48px; height: 48px; border-radius: 50%;
+      display: grid; place-items: center; font-size: 22px; margin-bottom: 20px;
+    }
+    .mode-card-icon.solo { background: rgba(201,127,90,0.1); }
+    .mode-card-icon.team { background: rgba(92,44,32,0.08); }
+    .mode-card h2 { font-family: var(--font-display); font-size: 24px; font-weight: 400; color: var(--ink); margin-bottom: 8px; }
+    .mode-card p { font-size: 14px; color: var(--ash); line-height: 1.55; margin-bottom: 0; }
+    .mode-card .action {
+      font-family: var(--font-mono); font-size: 10.5px; font-weight: 500;
+      letter-spacing: 0.08em; color: var(--clay); margin-top: 24px;
+      display: flex; align-items: center; gap: 6px;
+    }
+
+    /* Footer */
+    .landing-footer {
+      width: 100%; padding: 32px 0; border-top: var(--rule);
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.05em; color: var(--ash);
+    }
+
+    @media (max-width: 860px) {
+      .hero-content { flex-direction: column; gap: 40px; }
+      .hero-text { max-width: 100%; text-align: center; }
+      .hero-text p { max-width: 100%; }
+      .hero-image { max-width: 320px; }
+      .stats { gap: 24px; }
+      .brand-bar .tagline { display: none; }
+    }
+    @media (max-width: 640px) {
+      .hero-inner { padding: 32px 0; }
+      .mode-card { min-width: 100%; }
+      .stats { flex-wrap: wrap; gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="hero-inner">
+
+      <!-- Brand bar -->
+      <div class="brand-bar">
+        <img src="assets/logos/LogoBlack.png" alt="SHAPES" class="logo" />
+        <span class="tagline">Biomechanisches Trainingssystem</span>
+      </div>
+
+      <!-- Hero section -->
+      <div class="hero-content">
+        <div class="hero-text animate animate-delay-1">
+          <div class="badge animate animate-delay-2">Mitarbeiter-Training</div>
+          <h1 class="animate animate-delay-2">SHAPES<br/>verstehen &amp;<br/><em>erklären können</em></h1>
+          <p class="animate animate-delay-3">Ein strukturiertes Training für alle, die SHAPES täglich anwenden, erklären und verkaufen. In deinem Tempo oder gemeinsam im Team.</p>
+        </div>
+        <div class="hero-image animate animate-delay-3">
+          <img src="assets/images/hero-product.jpg" alt="SHAPES Allround Edition" />
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats animate animate-delay-4">
+        <div class="stat">
+          <div class="stat-num">5</div>
+          <div class="stat-label">Module</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">15</div>
+          <div class="stat-label">Lektionen</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">80 %</div>
+          <div class="stat-label">Bestes Ergebnis</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">2</div>
+          <div class="stat-label">Lern-Modi</div>
+        </div>
+      </div>
+
+      <!-- Mode selection -->
+      <div class="mode-section animate animate-delay-5">
+        <div class="section-title">Wähle deinen Modus</div>
+        <div class="mode-grid">
+          <a href="solo/index.html" class="mode-card">
+            <div class="mode-card-icon solo">👤</div>
+            <h2>Solo lernen</h2>
+            <p>Selbstbestimmt im eigenen Tempo. Jede Lektion speichert deinen Fortschritt. Inklusive Tests und Abschlussquiz.</p>
+            <span class="action">Jetzt starten →</span>
+          </a>
+          <a href="team/index.html" class="mode-card">
+            <div class="mode-card-icon team">👥</div>
+            <h2>Im Team trainieren</h2>
+            <p>2–8 Personen, ein Bildschirm. Die Trainerin führt durch die Module. Mit Diskussionsfragen, Rollenspielen und Team-Quiz.</p>
+            <span class="action">Team-Session starten →</span>
+          </a>
+          <a href="wissen/index.html" class="mode-card">
+            <div class="mode-card-icon" style="background:rgba(0,0,0,0.04);">📚</div>
+            <h2>Wissen</h2>
+            <p>Anatomie, Biomechanik, Propriozeption, Sport & Rehabilitation. Vertiefendes Wissen ohne Test — einfach lesen und lernen.</p>
+            <span class="action">Entdecken →</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="landing-footer">
+        <span>SHAPES Training · Edition 01, 2026</span>
+        <span><a href="#" onclick="resetAll()" style="color:var(--ash);text-decoration:none;cursor:pointer;">Fortschritt zurücksetzen</a></span>
+        <span>Patent WO 2021/180409 A1</span>
+      </div>
+
+    </div>
+  </div>
+
+<script>
+function resetAll() {
+  if (confirm("Gesamten Fortschritt zurücksetzen?")) {
+    localStorage.removeItem("shapes-training-progress");
+    alert("Fortschritt wurde zurückgesetzt. Die nächste Person kann von vorne beginnen.");
+    location.reload();
+  }
+}
+</script>
+</body>
+</html>

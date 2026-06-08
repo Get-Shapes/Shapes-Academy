@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Test — Kommunikation</title>
+  <link rel="stylesheet" href="../../shared/shapes.css" />
+</head>
+<body class="mod-m03">
+<aside class="sidebar" role="navigation">
+  <div class="sidebar-header">
+    <a href="../../index.html"><img src="../../assets/logos/LogoBlack.png" alt="SHAPES" class="sidebar-logo" /></a>
+    <a href="index.html" class="sidebar-back">← Modulübersicht</a>
+  </div>
+  <nav class="sidebar-nav" id="sidebar-nav"></nav>
+  <div class="sidebar-footer">
+    <div class="progress-summary" id="progress-summary"></div>
+  </div>
+</aside>
+<div class="main">
+  <div class="page-badge">Test</div>
+  <h1>Test</h1>
+  <p class="page-subtitle">6 Fragen. Ab 80 % bestanden.</p>
+  <hr class="rule" />
+
+  <div class="q-section" id="quiz-questions">
+
+  <!-- Frage 1 -->
+  <div class="quiz-question">
+    <div class="q-num">Frage 1</div>
+    <div class="q-text">Was ist der erste Schritt in einem guten Gespräch über SHAPES?</div>
+    <label class="option"><input type="radio" name="q0" value="a" /> a) Das Produkt ausführlich erklären</label>
+    <label class="option"><input type="radio" name="q0" value="b" /> b) Zuhören und verstehen, was die Person braucht</label>
+    <label class="option"><input type="radio" name="q0" value="c" /> c) Den Preis nennen</label>
+    <div class="feedback" id="fb-0"></div>
+  </div>
+
+  <!-- Frage 2: Multiple Choice — Grundlagen -->
+  <div class="quiz-question">
+    <div class="q-num">Frage 2</div>
+    <div class="q-text">Welche Aussagen zur Gesprächsführung sind korrekt? (Mehrere Antworten möglich)</div>
+    <label class="option"><input type="checkbox" name="q1a" value="t" /> a) Die Reihenfolge des Gesprächs kann je nach Situation variieren</label>
+    <label class="option"><input type="checkbox" name="q1b" value="f" /> b) Der Balance Check sollte immer NACH einer ausführlichen Erklärung kommen</label>
+    <label class="option"><input type="checkbox" name="q1c" value="t" /> c) Manchmal ist es am wirksamsten, direkt den Balance Check zu machen und dann zu erklären</label>
+    <label class="option"><input type="checkbox" name="q1d" value="t" /> d) Die Reihenfolge (erklären oder testen zuerst) musst du situativ analysieren und dann entscheiden</label>
+    <label class="option"><input type="checkbox" name="q1e" value="f" /> e) Die Kernfrage lautet: »Willst du kaufen?«</label>
+    <div class="feedback" id="fb-1"></div>
+  </div>
+
+  <!-- Frage 3 -->
+  <div class="quiz-question">
+    <div class="q-num">Frage 3</div>
+    <div class="q-text">Was steckt hinter dem Einwand »Das ist mir zu teuer«?</div>
+    <label class="option"><input type="radio" name="q2" value="a" /> a) Die Person hat wirklich kein Geld</label>
+    <label class="option"><input type="radio" name="q2" value="b" /> b) Die versteckte Frage: »Warum ist es das wert?«</label>
+    <label class="option"><input type="radio" name="q2" value="c" /> c) Die Person will verhandeln</label>
+    <div class="feedback" id="fb-2"></div>
+  </div>
+
+  <!-- Frage 4 -->
+  <div class="quiz-question">
+    <div class="q-num">Frage 4</div>
+    <div class="q-text">Wann sollte der Preis genannt werden?</div>
+    <label class="option"><input type="radio" name="q3" value="a" /> a) Erst ganz am Ende, nachdem die Person überzeugt ist</label>
+    <label class="option"><input type="radio" name="q3" value="b" /> b) Direkt bei der Vorstellung von SHAPES — kein Versteckspiel</label>
+    <label class="option"><input type="radio" name="q3" value="c" /> c) Nur auf Nachfrage</label>
+    <div class="feedback" id="fb-3"></div>
+  </div>
+
+  <!-- Frage 5: Multiple Choice — Einwände -->
+  <div class="quiz-question">
+    <div class="q-num">Frage 5</div>
+    <div class="q-text">Welche Aussagen zu Einwänden sind korrekt? (Mehrere Antworten möglich)</div>
+    <label class="option"><input type="checkbox" name="q4a" value="t" /> a) Jeder Einwand ist eine versteckte Frage</label>
+    <label class="option"><input type="checkbox" name="q4b" value="t" /> b) Wer einen Einwand hat, ist interessiert — sonst wäre die Person schon weg</label>
+    <label class="option"><input type="checkbox" name="q4c" value="f" /> c) Bei Einwänden sollte man sofort den Preis senken</label>
+    <label class="option"><input type="checkbox" name="q4d" value="t" /> d) »Zu teuer« bedeutet: »Zeig mir, warum es das wert ist«</label>
+    <label class="option"><input type="checkbox" name="q4e" value="f" /> e) Einwände sollte man am besten ignorieren und mit dem Gespräch weitermachen</label>
+    <div class="feedback" id="fb-4"></div>
+  </div>
+
+  <!-- Frage 6 -->
+  <div class="quiz-question">
+    <div class="q-num">Frage 6</div>
+    <div class="q-text">Welche Rolle nimmst du in einem SHAPES-Gespräch idealerweise ein?</div>
+    <label class="option"><input type="radio" name="q5" value="a" /> a) Verkäufer — du willst das Produkt an den Mann bringen</label>
+    <label class="option"><input type="radio" name="q5" value="b" /> b) Helfer und Begleiter — du hilfst der Person, eine gute Entscheidung zu treffen</label>
+    <label class="option"><input type="radio" name="q5" value="c" /> c) Experte — du erklärst alle technischen Details</label>
+    <div class="feedback" id="fb-5"></div>
+  </div>
+
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn-primary" id="btn-check">Alle Antworten prüfen</button>
+    <button class="btn" id="btn-retry" style="display:none;">Wiederholen</button>
+  </div>
+  <div id="score-display"></div>
+</div>
+<script src="../../shared/shapes.js"></script>
+<script>
+function customCheck() {
+  var correct = 0;
+  var total = 6;
+
+  // Q0: radio - b
+  var q0 = document.querySelector('input[name="q0"]:checked');
+  var fb0 = document.getElementById('fb-0');
+  if (q0 && q0.value === 'b') { correct++; fb0.textContent = '✓ Richtig! Zuhören und verstehen kommt zuerst.'; fb0.className = 'feedback correct'; q0.parentElement.classList.add('correct'); }
+  else { fb0.textContent = '✗ Falsch. Zuerst zuhören und verstehen, was die Person braucht.'; fb0.className = 'feedback incorrect'; if(q0) q0.parentElement.classList.add('incorrect'); }
+
+  // Q1: checkboxes — a,c,d correct, b,e wrong
+  var q1a = document.querySelector('input[name="q1a"]')?.checked;
+  var q1b = document.querySelector('input[name="q1b"]')?.checked;
+  var q1c = document.querySelector('input[name="q1c"]')?.checked;
+  var q1d = document.querySelector('input[name="q1d"]')?.checked;
+  var q1e = document.querySelector('input[name="q1e"]')?.checked;
+  var fb1 = document.getElementById('fb-1');
+  if (q1a && !q1b && q1c && q1d && !q1e) { correct++; fb1.textContent = '✓ Richtig! a, c und d sind korrekt.'; fb1.className = 'feedback correct'; }
+  else { fb1.textContent = '✗ Falsch. a, c und d sind korrekt — b (Reihenfolge ist nicht absolut) und e (Kernfrage ist Hilfe) sind falsch.'; fb1.className = 'feedback incorrect'; }
+
+  // Q2: radio - b
+  var q2 = document.querySelector('input[name="q2"]:checked');
+  var fb2 = document.getElementById('fb-2');
+  if (q2 && q2.value === 'b') { correct++; fb2.textContent = '✓ Richtig! Die versteckte Frage ist: "Warum ist es das wert?"'; fb2.className = 'feedback correct'; q2.parentElement.classList.add('correct'); }
+  else { fb2.textContent = '✗ Falsch. "Zu teuer" heisst: "Warum ist es das wert?" — beantworte die versteckte Frage.'; fb2.className = 'feedback incorrect'; if(q2) q2.parentElement.classList.add('incorrect'); }
+
+  // Q3: radio - b
+  var q3 = document.querySelector('input[name="q3"]:checked');
+  var fb3 = document.getElementById('fb-3');
+  if (q3 && q3.value === 'b') { correct++; fb3.textContent = '✓ Richtig! Transparenz von Anfang an schafft Vertrauen.'; fb3.className = 'feedback correct'; q3.parentElement.classList.add('correct'); }
+  else { fb3.textContent = '✗ Falsch. Der Preis gehört direkt zur Vorstellung: "Das sind SHAPES, 99 Euro, 2 Jahre Garantie."'; fb3.className = 'feedback incorrect'; if(q3) q3.parentElement.classList.add('incorrect'); }
+
+  // Q4: checkboxes — a,b,d correct, c,e wrong
+  var q4a = document.querySelector('input[name="q4a"]')?.checked;
+  var q4b = document.querySelector('input[name="q4b"]')?.checked;
+  var q4c = document.querySelector('input[name="q4c"]')?.checked;
+  var q4d = document.querySelector('input[name="q4d"]')?.checked;
+  var q4e = document.querySelector('input[name="q4e"]')?.checked;
+  var fb4 = document.getElementById('fb-4');
+  if (q4a && q4b && !q4c && q4d && !q4e) { correct++; fb4.textContent = '✓ Richtig! a, b und d sind korrekt.'; fb4.className = 'feedback correct'; }
+  else { fb4.textContent = '✗ Falsch. a, b und d sind korrekt — c (nie Preis senken) und e (nie ignorieren) sind falsch.'; fb4.className = 'feedback incorrect'; }
+
+  // Q5: radio - b
+  var q5 = document.querySelector('input[name="q5"]:checked');
+  var fb5 = document.getElementById('fb-5');
+  if (q5 && q5.value === 'b') { correct++; fb5.textContent = '✓ Richtig! Du bist Helfer und Begleiter.'; fb5.className = 'feedback correct'; q5.parentElement.classList.add('correct'); }
+  else { fb5.textContent = '✗ Falsch. Die ideale Rolle ist Helfer und Begleiter — nicht Verkäufer.'; fb5.className = 'feedback incorrect'; if(q5) q5.parentElement.classList.add('incorrect'); }
+
+  // Disable all inputs
+  document.querySelectorAll('input').forEach(function(el) { el.disabled = true; });
+
+  var pct = Math.round(correct / total * 100);
+  var passed = pct >= 80;
+  var scoreEl = document.getElementById('score-display');
+  if (scoreEl) {
+    scoreEl.innerHTML = '<div class="score-card"><div class="score-pct ' + (passed ? 'score-pass' : 'score-fail') + '">' + pct + '%</div><div class="score-label">' + correct + ' von ' + total + ' richtig — ' + (passed ? 'Bestanden! 🎉' : 'Leider nicht bestanden. Versuche es erneut.') + '</div></div>';
+  if (passed) { scoreEl.innerHTML += '<div style=\"text-align:center;margin-top:16px;\"><a href=\"../m04-verkauf-alltag/index.html\" class=\"btn btn-primary\">Weiter zu Zusammenfassung →</a></div>'; }
+  }
+  document.getElementById('btn-check').style.display = 'none';
+  document.getElementById('btn-retry').style.display = 'inline-flex';
+  if (passed) markLessonComplete('m03-gasteservice', 'quiz');
+}
+
+function customReset() {
+  document.querySelectorAll('.quiz-question').forEach(function(q) {
+    q.querySelectorAll('.option').forEach(function(o) {
+      o.classList.remove('selected', 'correct', 'incorrect');
+      var inp = o.querySelector('input');
+      if (inp) { inp.checked = false; inp.disabled = false; }
+    });
+    var fb = q.querySelector('.feedback');
+    if (fb) { fb.textContent = ''; fb.className = 'feedback'; }
+  });
+  document.getElementById('score-display') ? document.getElementById('score-display').innerHTML = '' : null;
+  document.getElementById('btn-check').style.display = 'inline-flex';
+  document.getElementById('btn-retry').style.display = 'none';
+}
+
+document.getElementById('btn-check')?.addEventListener('click', customCheck);
+document.getElementById('btn-retry')?.addEventListener('click', customReset);
+</script>
+</body>
+</html>
