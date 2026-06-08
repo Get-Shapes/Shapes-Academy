@@ -73,6 +73,7 @@ function renderSidebar() {
   if (!nav) { return; }
   var cp = window.location.pathname;
   var base = cp.indexOf('/solo/index.html') !== -1 || cp === '/' || cp.endsWith('/solo/') ? '' : '../';
+  var html = '';
   MODULES.forEach(function(mod, m) {
     var mp = moduleProgress(mod.id);
     if (m > 0) { html += '<hr class="sidebar-module-sep" />'; }
@@ -208,41 +209,34 @@ function initLesson(moduleId, lessonId, lessonCount) {
 
 
 function initTeamMode() {
-  var p = window.location.pathname;
-  // Calculate depth: how many levels from the project root?
-  // Find "shapes-training/" in the path and count slashes after it
-  var idx = p.indexOf('shapes-training/');
-  var relativePath = idx >= 0 ? p.substring(idx + 'shapes-training/'.length) : '';
-  var parts = relativePath.split('/').filter(function(x) { return x.length > 0 && x.endsWith('.html'); });
-  var depth = relativePath ? relativePath.split('/').length - 1 : 0;
-  var up = '';
-  for (var i = 0; i < depth; i++) { up += '../'; }
-  if (up === '') up = './';
-
-  // Fix ALL sidebar-back links to point to Team Dashboard
-  document.querySelectorAll('.sidebar-back').forEach(function(link) {
-    link.setAttribute('href', up + 'team/index.html');
-    link.innerHTML = '<span aria-hidden="true">←</span> Team-Dashboard';
-  });
-
-  // Only fix sidebar-back links to team dashboard — not ALL index.html links
-  // (module-level index.html links should still point to the module index)
-
-  // Fix breadcrumb links to preserve ?team
+  var sbl = document.getElementById('sidebar-back-link');
+  if (sbl) {
+    var p = window.location.pathname;
+    var cnt = (p.match(/\//g) || []).length;
+    // Pages in solo/module/ are 3 levels deep from root
+    // team/index.html is at team/index.html (1 level from root)
+    // From solo/module/dir/file.html: ../../team/index.html
+    // From solo/module/file.html: ../../team/index.html
+    var up = '';
+    for (var i = 0; i < cnt - 1; i++) { up += '../'; }
+    sbl.setAttribute('href', up + 'team/index.html');
+    sbl.innerHTML = '<span aria-hidden="true">←</span> Team-Dashboard';
+  }
+  // Fix breadcrumb links
   document.querySelectorAll('.breadcrumb a').forEach(function(a) {
     var h = a.getAttribute('href');
     if (h && h.indexOf('.html') > 0 && h.indexOf('?team') < 0 && h.indexOf('team/') < 0) {
       a.setAttribute('href', h + '?team');
     }
   });
-
-  // Fix lesson nav buttons to preserve ?team
+  // Fix nav buttons
   document.querySelectorAll('.nav-btn[href*=".html"]').forEach(function(b) {
     var h = b.getAttribute('href');
     if (h && h.indexOf('?team') < 0) {
       b.setAttribute('href', h + '?team');
     }
   });
+  // Fix next lesson link specifically
   var nl = document.getElementById('nav-next-link');
   if (nl) {
     var h = nl.getAttribute('href');
